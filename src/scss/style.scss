@@ -1,1 +1,10 @@
 // Import all of your scss files here
+li {
+  list-style: none;
+  float: left;
+  margin: 10px;
+}
+
+a {
+  text-decoration: none;
+}
