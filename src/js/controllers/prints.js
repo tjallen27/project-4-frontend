@@ -31,7 +31,9 @@ function PrintsIndexCtrl(Print) {
   PrintsShowCtrl.$inject = ['Print', 'User', '$stateParams', '$state', '$auth'];
   function PrintsShowCtrl(Print, User, $stateParams, $state, $auth) {
     const vm = this;
-    if ($auth.getPayload()) vm.currentUser = User.get({ id: $auth.getPayload().id });
+
+      if ($auth.getPayload())
+      vm.currentUser = User.get({ id: $auth.getPayload().id });
 
     vm.print = Print.get($stateParams);
 
@@ -40,14 +42,7 @@ function PrintsIndexCtrl(Print) {
         .$remove()
         .then(() => $state.go('printsIndex'));
     }
-
     vm.delete = printsDelete;
-
-    function printsUpdate() {
-      Print
-        .update({id: vm.print.id, print: vm.print });
-    }
-
   }
 
   PrintsEditCtrl.$inject = ['Print', 'User', '$stateParams', '$state'];

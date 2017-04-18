@@ -5,6 +5,13 @@ angular
 MainCtrl.$inject = ['$rootScope', '$state', '$auth'];
 function MainCtrl($rootScope, $state, $auth) {
   const vm = this;
+
+  $rootScope.$on('$stateChangeSuccess', () => {
+  if(vm.stateHasChanged) vm.message = null;
+  if(!vm.stateHasChanged) vm.stateHasChanged = true;
+  vm.isNavCollapsed = true;
+  });
+
   vm.isAuthenticated = $auth.isAuthenticated;
 
   $rootScope.$on('error', (e, err) => {
@@ -19,7 +26,7 @@ function MainCtrl($rootScope, $state, $auth) {
     if($auth.getPayload()) vm.currentUser = $auth.getPayload();
   });
 
-  const protectedStates = ['eventsNew', 'eventsEdit'];
+  const protectedStates = ['printsNew', 'printsEdit'];
 
   $rootScope.$on('$stateChangeStart', (e, toState) => {
     if((!$auth.isAuthenticated() && protectedStates.includes(toState.name))) {

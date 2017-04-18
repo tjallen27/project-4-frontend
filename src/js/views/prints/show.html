@@ -1,0 +1,8 @@
+<div class="row">
+  <h2>{{ printsShow.print.title }}</h2>
+  <img src="{{ printsShow.print.image }}">
+  <p>Created by: <strong>{{ printsShow.print.user.username }}</strong></p>
+  <p>{{ printsShow.print.price | currency:"£":2}}</p>
+  <button>Buy it!</button>
+  <button ng-click="printsShow.delete()" ng-if="main.isAuthenticated() && main.currentUser.id === printsShow.print.user.id">Delete</button>
+</div>

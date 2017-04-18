@@ -1,9 +1,15 @@
+<div class="prints_container">
+  <div ng-repeat="print in printsIndex.all" class="print">
+    <img src="{{ print.image }}">
+    <h2>{{ print.title }}</h2>
+    <button  ui-sref="printsShow({id: print.id})">View</button>
+  </div>
+</div>
 
-<ul>
-  <li ng-repeat="print in printsIndex.all">
-    <a href="#">
-      <img src="{{ print.image }}" width="200">
-      <h2>{{ print.title }}</h2>
-    </a>
-  </li>
-</ul>
+<modal-dialog id="testone">
+    <h1>testone</h1>
+    <code>
+    &lt;modal-dialog-trigger trigger-on=&quot;testone&quot; class=&quot;btn btn-danger&quot;&gt;modal-dialog-trigger&lt;/modal-dialog-trigger&gt;
+    </code>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, quas minima nam. Architecto nobis at deleniti unde ea totam, provident magni enim velit. Quo accusantium laborum magnam, veniam veritatis sit.</p>
+  </modal-dialog>

@@ -4,7 +4,7 @@ angular
 
 Print.$inject = ['$resource', 'API_URL'];
 function Print($resource, API_URL) {
-  return new $resource(`${API_URL}/prints/`, { id: '@id' }, {
+  return new $resource(`${API_URL}/prints/:id`, { id: '@id' }, {
     update: { method: 'PUT' }
   });
 }
