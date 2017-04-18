@@ -3,8 +3,9 @@
   <img src="{{ printsShow.print.image }}">
   <p>Created by: <strong>{{ printsShow.print.user.username }}</strong></p>
   <p>{{ printsShow.print.price | currency:"£":2}}</p>
-  <button onclick="document.getElementById('payment_modal').style.display='block'" ng-click="printsShow.delete()" ng-if="main.currentUser.id !== printsShow.print.user.id">Buy it!</button>
+  <button onclick="document.getElementById('payment_modal').style.display='block'" ng-if="main.currentUser.id !== printsShow.print.user.id">Buy it!</button>
   <button ng-click="printsShow.delete()" ng-if="main.isAuthenticated() && main.currentUser.id === printsShow.print.user.id">Delete</button>
+  <i class="fa fa-thumbs-o-up fa-3x" aria-hidden="true" onclick="style.color='rgba(250, 80, 80, 0.7)'"><span class="like_value">10</span></i>
 </div>
 
 

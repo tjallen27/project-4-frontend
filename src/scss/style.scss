@@ -23,6 +23,12 @@ form {
   }
 }
 
+i {
+  float: right;
+  margin: -2px 0 0 0;
+  padding: 0;
+}
+
 button {
   background: none;
   border: 2px solid #555;
@@ -117,3 +123,19 @@ button {
   column-count:         1;
   }
 }
+
+.navbar-default {
+  background-color: #fff;
+  border-top-color: none;
+  border-bottom-color:#999;
+  letter-spacing: 2px;
+  border-radius: 0;
+  text-transform: uppercase;
+  font-weight: lighter;
+}
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    border-color: #fff;
+    margin: 0 auto;
+    width: 32%;
+  }
