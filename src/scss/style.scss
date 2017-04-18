@@ -1,9 +1,9 @@
 // Import all of your scss files here
 
-
-main {
-  padding: 20px;
-}
+//
+// main {
+//   padding: 20px;
+// }
 
 form {
   margin: 0 10px;
@@ -33,10 +33,87 @@ button {
     background: #e9e9e9;
   }
 }
+//
+// .print {
+//   margin-bottom: 50px;
+//   h2 {
+//     margin: 5px;
+//   }
+// }
 
-.print {
-  margin-bottom: 50px;
-  h2 {
-    margin: 5px;
+#payment_modal {
+  display: none;
+  max-width: 300px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.payment_form {
+  text-align: center;
+  height: 325px;
+  input {
+    width: 80%;
+    margin: 10px;
+    padding: 5px;
+    text-align: center;
+    font-weight: lighter;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  button {
+    clear: both;
+    display: block;
+    margin: 10px auto;
+  }
+}
+
+.close {
+  margin: 0 5px;
+  font-size: 35px;
+  position: absolute;
+  right: 5%;
+  top: 2%;
+}
+
+#photos {
+   /* Prevent vertical gaps */
+   line-height: 0;
+   z-index: 0;
+   -webkit-column-count: 3;
+   -webkit-column-gap:   0px;
+   -moz-column-count:    3;
+   -moz-column-gap:      0px;
+   column-count:         3;
+   column-gap:           0px;
+}
+
+#photos img {
+  /* Just in case there are inline attributes */
+  width: 100% !important;
+  height: auto !important;
+  margin: 5px 5px 0;
+}
+
+@media (max-width: 1200px) {
+  #photos {
+  -moz-column-count:    3;
+  -webkit-column-count: 3;
+  column-count:         3;
+  }
+}
+@media (max-width: 800px) {
+  #photos {
+  -moz-column-count:    2;
+  -webkit-column-count: 2;
+  column-count:         2;
+  }
+}
+@media (max-width: 400px) {
+  #photos {
+  -moz-column-count:    1;
+  -webkit-column-count: 1;
+  column-count:         1;
   }
 }
