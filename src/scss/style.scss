@@ -36,7 +36,33 @@ h2 {
   img {
     // border-top-left-radius: 5px;
     // border-top-right-radius: 5px;
-    max-width: 100%;
+    width: 100%;
+  }
+}
+
+.comment_container {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+  h3 {
+    text-align: center;
+  }
+  li {
+    list-style: none;
+    margin: 0 10px 10px -40px;;
+  }
+  textarea {
+    width: 100%;
+  }
+  button {
+    display: block;
+    width: auto;
+    margin: 0 auto;
+  }
+  .comment_text {
+    padding: 0 20px;
+    font-size: 18px;
+    
   }
 }
 

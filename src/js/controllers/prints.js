@@ -30,14 +30,15 @@ function PrintsIndexCtrl(Print) {
     vm.create = printsCreate;
   }
 
-  PrintsShowCtrl.$inject = ['Print', 'User', '$stateParams', '$state', '$auth'];
-  function PrintsShowCtrl(Print, User, $stateParams, $state, $auth) {
+  PrintsShowCtrl.$inject = ['Print', 'User', 'Comment','$stateParams', '$state', '$auth'];
+  function PrintsShowCtrl(Print, User, Comment, $stateParams, $state, $auth) {
     const vm = this;
 
-      if ($auth.getPayload())
+    if ($auth.getPayload())
       vm.currentUser = User.get({ id: $auth.getPayload().id });
 
     vm.print = Print.get($stateParams);
+    vm.comment = {};
 
     function printsDelete() {
       vm.print
@@ -48,7 +49,7 @@ function PrintsIndexCtrl(Print) {
 
     function addComment() {
     vm.comment.print_id = vm.print.id;
-
+    vm.comment.user_id = vm.currentUser.id;
       Comment
         .save({ comment: vm.comment })
         .$promise

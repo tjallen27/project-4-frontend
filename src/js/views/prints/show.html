@@ -8,9 +8,26 @@
   <p>{{ printsShow.print.price | currency:"£":2}}</p>
   <button onclick="document.getElementById('payment_modal').style.display='block'" ng-if="main.currentUser.id !== printsShow.print.user.id">Buy it!</button>
   <button ng-click="printsShow.delete()" ng-if="main.isAuthenticated() && main.currentUser.id === printsShow.print.user.id">Delete</button>
-  <!-- <i class="fa fa-thumbs-o-up fa-3x" aria-hidden="true" onclick="style.color='rgba(250, 120, 120, 1)'"><span class="like_value">10</span></i> -->
 </div>
 
+<div class="comment_container">
+  <div class="" ng-if="main.isAuthenticated()">
+    <h3>Add Comment</h3>
+    <form ng-submit="printsShow.addComment()">
+      <textarea rows="5" cols="50" name="body" ng-model="printsShow.comment.body"></textarea>
+      <button>Create</button>
+    </form>
+  </div>
+  <div class="">
+    <h3>Comments</h3>
+    <ul>
+      <li ng-repeat="comment in printsShow.print.comments">
+        <strong>{{ comment.user.username }}</strong> said: <br><span class="comment_text">"<em>{{ comment.body }}</em>"</span>
+        <button ng-click="printsShow.deleteComment(comment)" ng-if="main.isAuthenticated() && main.currentUser.id === comment.user.id">Delete</button>
+      </li>
+    </ul>
+  </div>
+</div>
 
 <div id="payment_modal" >
     <div class="modal-content">
