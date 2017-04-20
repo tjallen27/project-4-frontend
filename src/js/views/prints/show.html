@@ -23,7 +23,7 @@
     <ul>
       <li ng-repeat="comment in printsShow.print.comments">
         <strong>{{ comment.user.username }}</strong> said: <br><span class="comment_text">"<em>{{ comment.body }}</em>"</span>
-        <button ng-click="printsShow.deleteComment(comment)" ng-if="main.isAuthenticated() && main.currentUser.id === comment.user.id">Delete</button>
+        <button ng-click="printsShow.deleteComment(comment)" ng-if="main.isAuthenticated() && main.currentUser.id === comment.user.id" style="margin-left: 0; color: rgba(250, 50, 50, 0.8); border: none; font-size: 12px; padding: 5px;">Delete</button>
       </li>
     </ul>
   </div>
