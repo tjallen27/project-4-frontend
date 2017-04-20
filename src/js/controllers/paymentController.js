@@ -28,6 +28,7 @@ function PaymentController($http, API_URL) {
           .then(function(res) {
             if(res.status === 200) {
               self.paymentSuccessful = true;
+              document.getElementById('payment_modal').style.visibility = "hidden";
             }
             else {
               self.paymentSuccessful = false;
