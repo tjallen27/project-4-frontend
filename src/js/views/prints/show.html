@@ -1,11 +1,14 @@
 <div class="prints_container">
   <h2>{{ printsShow.print.title }}</h2>
-  <img src="{{ printsShow.print.image }}">
-  <p>Created by: <strong>{{ printsShow.print.user.username }}</strong></p>
+  <img ng-src="{{ printsShow.print.image_src }}">
+  <p>Created by:
+    <strong>
+      <a ui-sref="usersShow({ id: printsShow.print.user.id})">{{ printsShow.print.user.username }}</a>
+    </strong></p>
   <p>{{ printsShow.print.price | currency:"£":2}}</p>
   <button onclick="document.getElementById('payment_modal').style.display='block'" ng-if="main.currentUser.id !== printsShow.print.user.id">Buy it!</button>
   <button ng-click="printsShow.delete()" ng-if="main.isAuthenticated() && main.currentUser.id === printsShow.print.user.id">Delete</button>
-  <i class="fa fa-thumbs-o-up fa-3x" aria-hidden="true" onclick="style.color='rgba(250, 80, 80, 0.7)'"><span class="like_value">10</span></i>
+  <!-- <i class="fa fa-thumbs-o-up fa-3x" aria-hidden="true" onclick="style.color='rgba(250, 120, 120, 1)'"><span class="like_value">10</span></i> -->
 </div>
 
 

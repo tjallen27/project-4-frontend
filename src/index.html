@@ -20,12 +20,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">PrintShop</a>
+          <a class="navbar-brand" href="/">PrintShop</a>
         </div>
         <div class="collapse navbar-collapse" uib-collapse="main.isNavCollapsed">
           <ul class="nav navbar-nav">
             <li ng-if="main.isAuthenticated()"><a ui-sref="printsIndex"> All Prints</a></li>
             <li ng-if="main.isAuthenticated()"><a ui-sref="printsNew">Upload a print</a></li>
+            <li ng-if="main.isAuthenticated()"><a ui-sref="usersShow({ id: main.currentUser.id})">Your Profile</a></li>
             <li ng-if="!main.isAuthenticated()"><a ui-sref="login">Login</a></li>
             <li ng-if="!main.isAuthenticated()"><a ui-sref="register">Register</a></li>
             <li ng-if="main.isAuthenticated()"><a ng-click="main.logout()" href="#">Logout</a></li>

@@ -1,0 +1,25 @@
+<h2>{{ usersShow.user.username }}</h2>
+  <div class="container" id="user_prints">
+    <div ng-repeat="print in usersShow.user.prints" class="print">
+      <img ui-sref="printsShow({id: print.id})" src="{{ print.image_src }}">
+      <div class="overlay">
+        <h3>{{ print.title }}</h3>
+        <p>Created by: {{ usersShow.user.username }}</p>
+      </div>
+    </div>
+    <div class="" ng-if="main.isAuthenticated()">
+      <h2>Add Comment</h2>
+      <form ng-submit="printsShow.addComment()">
+        <textarea rows="5" cols="50" name="body" ng-model="printsShow.comment.body"></textarea>
+        <button>Create</button>
+      </form>
+    </div>
+    <div class="">
+      <h2>Comments</h2>
+      <ul>
+        <li ng-repeat="comment in printsShow.print.comments">
+          {{ comment.body }} - {{ comment.user.username }}
+        </li>
+      </ul>
+    </div>
+  </div>

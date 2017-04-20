@@ -15,7 +15,9 @@ function PrintsIndexCtrl(Print) {
   PrintsNewCtrl.$inject = ['Print', 'User', '$state'];
   function PrintsNewCtrl(Print, User, $state) {
     const vm = this;
-    vm.print = {};
+    vm.print = {
+      "medium":"Print"
+    };
     vm.users = User.query();
 
     function printsCreate() {
@@ -43,6 +45,32 @@ function PrintsIndexCtrl(Print) {
         .then(() => $state.go('printsIndex'));
     }
     vm.delete = printsDelete;
+
+    function addComment() {
+    vm.comment.print_id = vm.print.id;
+
+      Comment
+        .save({ comment: vm.comment })
+        .$promise
+        .then((comment) => {
+          vm.print.comments.push(comment);
+          vm.comment = {};
+        });
+    }
+
+    vm.addComment = addComment;
+
+    function deleteComment(comment) {
+      Comment
+        .delete({ id: comment.id })
+        .$promise
+        .then(() => {
+          const index = vm.print.comments.indexOf(comment);
+          vm.print.comments.splice(index, 1);
+        });
+    }
+
+    vm.deleteComment = deleteComment;
   }
 
   PrintsEditCtrl.$inject = ['Print', 'User', '$stateParams', '$state'];
