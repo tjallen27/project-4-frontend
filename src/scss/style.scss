@@ -113,11 +113,29 @@ button {
 
 #payment_modal {
   display: none;
-  max-width: 300px;
+  text-align: center;
+  width: 400px;
+  padding: 10px;
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translateX(-50%) translateY(-50%);
+  button {
+    margin-bottom: 20px;
+  }
+}
+
+.form-group .form-control {
+  width: 200px;
+  margin: 0 auto;
+}
+.input-group{
+  width: 170px;
+  margin: 0 auto;
+}
+
+input .amount {
+  width: 170px
 }
 
 .payment_form {
@@ -143,8 +161,8 @@ button {
   margin: 0 5px;
   font-size: 35px;
   position: absolute;
-  right: 5%;
-  top: 2%;
+  right: 1%;
+  top: 0;
 }
 
 #photos, #user_prints {
@@ -201,26 +219,41 @@ button {
   height: auto;
   }
 
+
+.error {
+  display: block;
+  background: rgba(250, 10, 10, 0.2);
+  text-transform: lowercase;
+  letter-spacing: 1px;
+  font-weight: bolder;
+  color:  rgba(250, 10, 10, 1);
+}
+
 // ****************** IMAGE OVERLAY ON HOVER **************** /
 .print {
   .overlay {
     background-color: rgba(250, 250, 250, 0.5);
-    width: 98%;
+    width: 100%;
     height: 100%;
     position: relative;
-    bottom: 90px;
+    bottom: 120px;
     color:  rgba(0, 0, 0, 0.85);
     text-align: center;
     padding-bottom: 5px;
-    margin: 0 auto -70px;
+    margin: 0 auto -120px;
     letter-spacing: 1px;
     // font-weight: lighter;
     opacity: 0;
     transition: all 0.5s ease;
+    h3 {
+      padding: 20px 0 0 0;
+    }
   }
-
   &:hover .overlay {
     opacity: 1;
+  }
+  p {
+    margin-bottom: 20px;
   }
 }
 

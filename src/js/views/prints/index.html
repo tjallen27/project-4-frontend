@@ -1,9 +1,11 @@
 <div class="container figure-overlay" id="photos">
+  
   <div ng-repeat="print in printsIndex.all" class="print">
     <img ui-sref="printsShow({id: print.id})" src="{{ print.image_src }}">
     <div class="overlay">
       <h3>{{ print.title }}</h3>
       <p>Created by: {{ print.user.username }}</p>
+      <p>{{ print.price | currency:"£":2 }}</p>
     </div>
   </div>
 </div>
