@@ -213,14 +213,14 @@ input .amount {
   letter-spacing: 2px;
   border-radius: 0;
   text-transform: uppercase;
-  font-weight: lighter;
+  font-weight: normal;
   margin: 0;
 }
 
 .navbar-default .navbar-collapse, .navbar-default .navbar-form {
     border-color: #fff;
     margin: 0 auto;
-    width: 38%;
+    width: 42%;
   }
 
   .navbar .navbar-nav {
@@ -272,6 +272,27 @@ input .amount {
   background-color: #fefde5 !important;
 }
 
+.aotm {
+  margin: 0 auto;
+  max-width: 30%;
+  h3 {
+    text-align: center;
+  }
+  ul {
+    li {
+      display: inline-block;
+      margin-right: 10px;
+    }
+  }
+  img {
+    margin-top: 0;
+  }
+}
+
+.dot {
+  font-size: 5em;
+}
+
 
 // ****************** IMAGE OVERLAY ON HOVER **************** /
 .print {
@@ -306,13 +327,25 @@ input .amount {
 // ****************** MEDIA QUERIES ************* //
   @media (max-width: 1200px) {
 
+    .aotm {
+      display: none;
+    }
+
     #photos, #user_prints {
     -moz-column-count:    3;
     -webkit-column-count: 3;
     column-count:         3;
     }
   }
+
   @media (max-width: 800px) {
+
+    .prints_container {
+      p, button {
+        margin: 0;
+      }
+    }
+
     .container {
       max-width: 100%;
       margin: 0 auto;
@@ -331,6 +364,7 @@ input .amount {
       float: none;
       max-width: 100%;
       padding: 0;
+
     }
 
     #photos, #user_prints {

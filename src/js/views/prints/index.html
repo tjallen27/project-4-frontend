@@ -1,5 +1,20 @@
+<div class="aotm">
+  <h3>Print of the month</h3>
+  <ul>
+    <li>
+      <h4>Name: <strong>{{ printsIndex.all[4].title }}</strong></h4>
+      <p>Created By: <strong>{{ printsIndex.all[4].user.username }}</strong></p>
+      <button ui-sref="printsShow({id: 5})" src="{{ print.image_src }}">View it</button>
+    </li>
+    <li>
+      <img ng-src="{{ printsIndex.all[4].image_src }}" width="200">
+    </li>
+  </ul>
+
+<hr>
+
+</div>
 <div class="container figure-overlay" id="photos">
-  
   <div ng-repeat="print in printsIndex.all" class="print">
     <img ui-sref="printsShow({id: print.id})" src="{{ print.image_src }}">
     <div class="overlay">
