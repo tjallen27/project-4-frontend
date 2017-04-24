@@ -217,6 +217,10 @@ input .amount {
   margin: 0;
 }
 
+.navbar-default .navbar-nav > li > a:hover {
+    color: #fa755a;
+}
+
 .navbar-default .navbar-collapse, .navbar-default .navbar-form {
     border-color: #fff;
     margin: 0 auto;
@@ -293,23 +297,35 @@ input .amount {
   font-size: 5em;
 }
 
+.caps {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
 
 // ****************** IMAGE OVERLAY ON HOVER **************** /
 .print {
+  opacity: 1;
+  transition: all 0.5s ease;
+  &:hover {
+    cursor: pointer;
+    opacity: 0.85;
+
+  }
   .overlay {
-    background-color: rgba(250, 250, 250, 0.5);
+    background-color: rgba(255, 80, 87, 0.85);
     width: 100%;
     height: 100%;
     position: relative;
     bottom: 120px;
-    color:  rgba(0, 0, 0, 0.85);
+    color:  rgba(250, 250, 250, 1);
     text-align: center;
     padding-bottom: 5px;
     margin: 0 auto -120px;
     letter-spacing: 1px;
     // font-weight: lighter;
     opacity: 0;
-    transition: all 0.5s ease;
+
     h3 {
       padding: 20px 0 0 0;
     }

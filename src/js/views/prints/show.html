@@ -9,9 +9,14 @@
   <p>{{ printsShow.print.price | currency:"£":2}}</p>
   <button onclick="document.getElementById('payment_modal').style.display='block'" ng-if="main.currentUser.id !== printsShow.print.user.id">Buy it!</button>
   <button ng-click="printsShow.delete()" ng-if="main.isAuthenticated() && main.currentUser.id === printsShow.print.user.id">Delete</button>
+    <button ui-sref="printsEdit({id: printsShow.print.id})" ng-if="main.isAuthenticated() && main.currentUser.id === printsShow.print.user.id">Edit</button>
 </div>
 
 <div class="comment_container">
+  <div>
+    <h2 ng-if="printsShow.print.body != null">About {{ printsShow.print.title}}</h2>
+    <p>{{ printsShow.print.body}}</p>
+  </div>
   <div class="" ng-if="main.isAuthenticated()">
     <h2>Add Comment</h2>
     <form ng-submit="printsShow.addComment()">
