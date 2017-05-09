@@ -5,10 +5,9 @@ angular
   .controller('PrintsShowCtrl', PrintsShowCtrl)
   .controller('PrintsEditCtrl', PrintsEditCtrl);
 
-PrintsIndexCtrl.$inject = ['Print'];
-function PrintsIndexCtrl(Print) {
+PrintsIndexCtrl.$inject = ['Print', 'filterFilter', '$scope'];
+function PrintsIndexCtrl(Print, filterFilter, $scope) {
   const vm = this;
-
   vm.all = Print.query();
 }
 

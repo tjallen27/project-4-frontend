@@ -2,26 +2,32 @@
   <h3>Print of the month</h3>
   <ul>
     <li>
-      <h4>Name: <strong>{{ printsIndex.all[4].title }}</strong></h4>
-      <p>Created By: <strong>{{ printsIndex.all[4].user.username }}</strong></p>
-      <button ui-sref="printsShow({id: 5})" src="{{ print.image_src }}">View it</button>
+      <h4>Name: <strong>{{ printsIndex.all[3].title }}</strong></h4>
+      <p>Created By: <strong>{{ printsIndex.all[3].user.username }}</strong></p>
+      <p>Price: <strong>{{ printsIndex.all[3].price | currency:"£":2 }}</strong></p>
+      <button ui-sref="printsShow({id: 7})" src="{{ print.image_src }}">View it</button>
     </li>
     <li>
-      <img ng-src="{{ printsIndex.all[4].image_src }}" width="200">
+      <img ng-src="{{ printsIndex.all[3].image_src }}" width="200">
     </li>
   </ul>
-
-<hr>
-
 </div>
-<div class="container figure-overlay" id="photos">
-  <div ng-repeat="print in printsIndex.all | orderBy : 'price'" class="print">
-    <img ui-sref="printsShow({id: print.id})" src="{{ print.image_src }}">
-    <div class="overlay">
-      <h3>{{ print.title }}</h3>
-      <p>Created by: {{ print.user.username }}</p>
-      <p>{{ print.price | currency:"£":2 }}</p>
 
+ <div ng-controller="PrintsIndexCtrl as printsIndex" class="container">
+
+<div class="search_container">
+  <input type="text" class="search" ng-model="printsIndex.q" placeholder="Search...">
+</div>
+
+  <div class="container figure-overlay" id="photos">
+    <div ng-repeat="print in printsIndex.all | filter: { title: printsIndex.q }" class="print">
+      <img ui-sref="printsShow({id: print.id})" src="{{ print.image_src }}">
+      <div class="overlay">
+        <h3>{{ print.title }}</h3>
+        <p>Created by: {{ print.user.username }}</p>
+        <p>{{ print.price | currency:"£":2 }}</p>
+      </div>
     </div>
   </div>
+
 </div>
