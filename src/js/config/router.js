@@ -1,11 +1,7 @@
 angular
   .module('Kuler')
   .config(Router);
-
-app.config(['$qProvider', function ($qProvider) {
-    $qProvider.errorOnUnhandledRejections(false);
-}]);
-
+  
 Router.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];
 function Router($stateProvider, $urlRouterProvider, $locationProvider) {
   $locationProvider.html5Mode(true);
