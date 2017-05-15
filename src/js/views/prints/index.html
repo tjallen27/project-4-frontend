@@ -2,13 +2,13 @@
   <h3>Print of the month</h3>
   <ul>
     <li>
-      <h4>Name: <strong>{{ printsIndex.all[3].title }}</strong></h4>
+      <h4>Name: <strong>{{ printsIndex.all[23].title }}</strong></h4>
       <p>Created By: <strong>{{ printsIndex.all[3].user.username }}</strong></p>
       <p>Price: <strong>{{ printsIndex.all[3].price | currency:"£":2 }}</strong></p>
       <button ui-sref="printsShow({id: 23})" src="{{ print.image_src }}">View it</button>
     </li>
     <li>
-      <img ng-src="{{ printsIndex.all[23].image_src }}" width="200">
+      <img ng-src="{{ printsIndex.all[22].image_src }}" width="200">
     </li>
   </ul>
 </div>
