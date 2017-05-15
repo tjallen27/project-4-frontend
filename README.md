@@ -1,64 +1,36 @@
-### Using this Angular Gulp Setup
+# PRINTSHOP
+[Visit PRINTSHOP!](https://boiling-sands-25313.herokuapp.com/)
 
-To get setup with the starter-code, you first need to run:
 
-```sh
-$ bower install && gulp install
-```
+![Alt text](./src/images/screenshot.png)
 
-## How is gulp setup?
+### Aim of the project
 
-Rather than trying to manage one giant `gulpfile.js` that is file responsible for creating multiple tasks, each task has been broken out into its own file and placed in a directory `tasks`. Any files in that directory get automatically required in the gulpfile using the `require-dir` npm package.
+For my final project I wanted to keep it quite simple and cement some concpets of Ruby that I felt like I struggled with initially. The PRINTSHOP is designed so artists can upload and sell their prints, and users can view and filter the prints on a main index page.
 
-To add a new task, simply add a new task file that directory.
+### Planning
 
-/tasks/default.js specifies the default set of tasks to run
-when you run `gulp`.
+When planning the project, I used balsamiq and Trello to work out the user journey and which routes needed to be included.
 
-Configuration options are stored in the `package.json` file.
+### Coding
 
-When deploying, ensure that a `postinstall` script has been added to
-your package.json, e.g.
+The app was created using Ruby on Rails to create an external API and Angular on the front end.
 
-```json
-"postinstall": "bower install && gulp deploy"
-```
+### What went well
 
-This setup expects that there is a bower.json file with at least ONE package
-installed. This will created a bower_components directory after
-the postinstall script has run.
+##### Coding
 
-When deploying, this setup expects that the NODE_ENV is set to `production`.
-Also that the NPM_CONFIG_PRODUCTION is set to `false`. Then you can also set the API_URL to be the correct URL for your deployed app. This will automatically replace `http://localhost:4000` to be the correct url.
+I am very happy with how the project turned out. I didn't manage to get eveything done that I had intended but I am very proud that I managed to create the API and build an aesthetic looking app.
 
-You can do this by running:
+### What was a challenge
 
-```bash
-$ heroku config:set NODE_ENV=production
-$ heroku config:set NPM_CONFIG_PRODUCTION=false
+#### Coding
 
-# An example url
-$ heroku config:set API_URL=https://project-on-heroku.herokuapp.com/
-```
+As there were quite a few features that I wanted to include in the project, I ran out of time and didn't manage to include as much as I would have liked. 
 
-### Bower overrides
+### If we had more time we'd like to...
 
-Sometimes, you might want to `override` the `main` file(s) for a specific Bower component. You can do this directly inside the `bower.json` file like this:
-
-```json
-"overrides": {
-  "bootstrap": {
-    "main": [
-      "dist/css/bootstrap.css",
-      "dist/js/bootstrap.js",
-      "dist/fonts/*"
-    ]
-  },
-  "font-awesome": {
-    "main": [
-      "css/font-awesome.css",
-      "fonts/*"
-    ]
-  }
-},
-```
+* Filter by price, catergory, prominent colors
+* Add tags to each print
+* Finish Stripe payment
+* Include mailer when a payment is received
